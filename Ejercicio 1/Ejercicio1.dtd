@@ -2,8 +2,9 @@
 <!ATTLIST catalogo
     fecha CDATA #REQUIRED
 >
-<!ELEMENT libros (libro+)>
-<!ELEMENT libro (titulo, anio, autores, etiquetas? )>
+<!-- Libros -->
+<!ELEMENT libros (libro*)>
+<!ELEMENT libro (titulo, anio, autores, etiquetas?)>
 <!ATTLIST libro
     id  ID  #REQUIRED
     categoria   CDATA   #IMPLIED
@@ -19,8 +20,9 @@
 <!ELEMENT etiquetas (etiqueta+)>
 <!ELEMENT etiqueta (#PCDATA)>
 
+<!-- Revistas -->
 
-<!ELEMENT revistas (revista+)>
+<!ELEMENT revistas (revista*)>
 <!ELEMENT revista (titulo, anio)>
 <!ATTLIST revista
     id  ID  #REQUIRED
@@ -29,6 +31,7 @@
     numero  CDATA   #IMPLIED
 >
 
+<!-- Usuarios -->
 
 <!ELEMENT usuarios (usuario+)>
 <!ELEMENT usuario (nombre, email)>
@@ -38,6 +41,7 @@
 >
 <!ELEMENT email (#PCDATA)>
 
+<!-- Prestamos -->
 
 <!ELEMENT prestamos (prestamo+)>
 <!ELEMENT prestamo (fecha_inicio, fecha_fin?, estado)>
